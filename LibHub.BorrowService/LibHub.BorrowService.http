@@ -1,7 +1,7 @@
 @LibHub.BorrowService_HostAddress = http://localhost:5153
 
 @testCopyId = 5fa00206-a487-4a38-8e4f-5117ab544edd
-@testLoanId = 12b2b9f5-d272-4769-b825-07b995fc40b3
+@testLoanId = c6e3741c-d5bb-4f00-9d29-3c70502173b4
 
 ### 1. Borrow a Book
 POST {{LibHub.BorrowService_HostAddress}}/api/borrow
