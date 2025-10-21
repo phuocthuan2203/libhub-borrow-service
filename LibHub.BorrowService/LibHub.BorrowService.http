@@ -1,0 +1,44 @@
+@LibHub.BorrowService_HostAddress = http://localhost:5153
+
+@testCopyId = 5fa00206-a487-4a38-8e4f-5117ab544edd
+@testLoanId = 12b2b9f5-d272-4769-b825-07b995fc40b3
+
+### 1. Borrow a Book
+POST {{LibHub.BorrowService_HostAddress}}/api/borrow
+Content-Type: application/json
+
+{
+  "copyId": "{{testCopyId}}"
+}
+
+### 2. Get My Active Loans
+GET {{LibHub.BorrowService_HostAddress}}/api/borrow/my-loans
+Accept: application/json
+
+### 3. Get Specific Loan by ID
+GET {{LibHub.BorrowService_HostAddress}}/api/borrow/{{testLoanId}}
+Accept: application/json
+
+### 4. Return a Book
+POST {{LibHub.BorrowService_HostAddress}}/api/borrow/return
+Content-Type: application/json
+
+{
+  "loanId": "{{testLoanId}}"
+}
+
+### 5. Borrow Multiple Books (Test Limit)
+POST {{LibHub.BorrowService_HostAddress}}/api/borrow
+Content-Type: application/json
+
+{
+  "copyId": "c545c4f2-d30b-4183-aebd-1b2eb597cc26"
+}
+
+### 6. Borrow Another Book
+POST {{LibHub.BorrowService_HostAddress}}/api/borrow
+Content-Type: application/json
+
+{
+  "copyId": "44444444-4444-4444-4444-444444444444"
+}
